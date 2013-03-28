@@ -8,4 +8,4 @@ Standards-Version: 3.8.3
 Package: flow-pip2.7
 Architecture: all
 Depends: flow-python2.7, flow-distribute2.7
-Description: distribute for flow-python
+Description: pip for flow-python
