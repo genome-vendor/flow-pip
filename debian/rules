@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+PKG=$(shell dh_listpackages)
+DEB_DIR=debian/$(PKG)
+
+PKG_LIB_DIR=/opt/flow-python2.7
+PYTHON_INTERPRETER=/opt/flow-python2.7/bin/python
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(PYTHON_INTERPRETER) setup.py build
+
+override_dh_auto_install:
+	$(PYTHON_INTERPRETER) setup.py install --root=$(DEB_DIR) --prefix=$(PKG_LIB_DIR)
+
+override_dh_auto_clean:
+	$(PYTHON_INTERPRETER) setup.py clean -a
+
+override_dh_strip:
+	echo "Do not create a *dbgsym*.ddeb package."

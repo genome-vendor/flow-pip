@@ -1,0 +1,11 @@
+Source: flow-pip2.7
+Section: python
+Priority: optional
+Maintainer: Mark Burnett <mburnett@genome.wustl.edu>
+Build-Depends: debhelper (>= 7), flow-python2.7, flow-distribute2.7
+Standards-Version: 3.8.3
+
+Package: flow-pip2.7
+Architecture: all
+Depends: flow-python2.7, flow-distribute2.7
+Description: distribute for flow-python
